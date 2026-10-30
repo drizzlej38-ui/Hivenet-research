@@ -347,9 +347,9 @@ The SkyNet repository contains more than prose: it includes a deliberately incom
 |---|---|
 | `AGENT_CARD_SCHEMA.md` | `b29830a21074f3e4f7e4558a01bad29e2d357ac9` |
 | `AGP_FEDERATION.md` | `152415b9e98005d0f7c1bf98eb6882291bf4f2e1` |
-| `DRAGON_RADAR.md` | `[SHA not yet recorded in this audit extract]` |
-| `ENDCAP.md` | `[SHA not yet recorded in this audit extract]` |
-| `NODE_CLASSES.md` | `[SHA not yet recorded in this audit extract]` |
+| `DRAGON_RADAR.md` | `80e8edda8e61fba0855e594f85a3c60e24d77629` |
+| `ENDCAP.md` | `390fea98c4cd831bafdd701c90d14c87699b6302` |
+| `NODE_CLASSES.md` | `1ca8f3720658c3b13ab39e402cabc83546a32b2c` |
 | `endcap_prototype.py` | `9361dc3868648e4b4bbe52ebbd568ad700806887` |
 
 The missing SHA values above are intentionally left blank rather than guessed; they should be filled after retrieval of those exact file metadata records.
