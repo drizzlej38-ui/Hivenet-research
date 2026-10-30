@@ -26,11 +26,25 @@ Each claim should be identified as one of:
 
 Test plans are not test results. Hashes establish byte identity, not safety or authorization. Reputation and consensus are not substitutes for cryptographic verification or threat analysis.
 
+## Research status and current working documents
+
+### Phase 1 — Research foundation
+- [Foundational manuscript draft](papers/HIVENET_BIODIGITAL_FOUNDATIONAL_DRAFT.md)
+- [Initial source audit](reviews/SOURCE_AUDIT.md)
+- [Reference map](references/REFERENCE_MAP.md)
+- [Publication readiness checklist](reviews/PUBLICATION_CHECKLIST.md)
+
+### Phase 2 — Evidence and architecture reconciliation
+- [Architecture reconciliation](reviews/PHASE_2_ARCHITECTURE_RECONCILIATION.md)
+- [Implementation evidence matrix](reviews/IMPLEMENTATION_EVIDENCE_MATRIX.md)
+
+Phase 2 compares the documented target architecture with the source artifacts actually present in the engineering repository. It distinguishes the current LAN coordinator/worker demonstrator from the longer-term sovereign mesh design. Its findings are preliminary and remain subject to founder review.
+
 ## Architectural position under review
 
 Working formulation, pending founder review:
 
-> HiveNet is a modular, local-first coordination and resource-sharing framework. It can operate as a single-device orchestration environment and is intended to extend toward a federation of independently controlled nodes. Coordination functions are roles or services, not inherently a central authority. Participation, resource sharing, and external connectivity are opt-in and governed by explicit owner-controlled policies.
+> HiveNet is a modular, local-first coordination and resource-sharing framework. Its current demonstrator uses a central coordinator to register workers and dispatch bounded test tasks over a local network. The longer-term architecture explores federation among independently controlled nodes. In that target architecture, coordination is a bounded role or service rather than an inherent central authority. Participation, resource sharing, external connectivity, and data disclosure are governed by explicit owner- or custodian-authorized policies.
 
 This is a working research statement, not a claim that the full architecture has been implemented.
 
