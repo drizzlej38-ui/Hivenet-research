@@ -187,3 +187,33 @@ The Agent Card schema describes `node_class` as a string, while `NODE_CLASSES.md
 | `endcap_prototype.py` | `9361dc3868648e4b4bbe52ebbd568ad700806887` |
 
 No runtime test of this prototype was performed in this review. All findings above are based on static source inspection.
+
+
+## 9. ENDCAP encrypted archive V1-1 / V1-2 evidence
+
+The encrypted archive package was located in saved project ZIPs, distinct from the SkyNet `endcap_prototype.py` identity/federation demonstration. Full review: [ENDCAP V1 Implementation Audit](ENDCAP_V1_IMPLEMENTATION_AUDIT.md).
+
+| Snapshot | SHA-256 | Tests executed in review environment |
+|---|---|---|
+| V1-1 | `d28abaec561b06bcfc8c3bef18914252e8fe5c7ac3121ae3ebb713d364ad3bea` | 81 passed |
+| V1-2 | `4af0f3022547d048c84ef3cb90b32776be571c5364b051d75b91e6e21fcdcbef` | 90 passed (unittest and pytest) |
+
+Environment: Python 3.13.5, cryptography 46.0.4. V1-2 CLI smoke test also passed keygen, archive, verify, retrieve, recovery-kit creation, and owner-key restoration. These are fresh review-environment results, not Termux results.
+
+### Updated ENDCAP classification
+
+- Encrypted archive core: **prototype source exists; 90-test V1-2 suite passes in the review environment**.
+- Owner-key recovery: **implemented in V1-2 and covered by tests**; signing-key recovery and AGP/ATP authorization bypass are explicitly out of scope.
+- AGP: **separate draft specification, not integrated into archive operations**.
+- Storage: local-directory and in-memory backends supplied; no second production backend or redundancy.
+
+### Findings reproduced during static/behavioral review
+
+1. LocalDirBackend path checks are lexical and do not reject symlinked parent directories; a symlinked object directory allowed a write outside the configured store root in a targeted probe.
+2. `status()` returns `complete` when the manifest exists even if a required chunk is missing; `verify()` correctly detects the missing chunk. “Complete” therefore means marker-present, not verified.
+3. Per-file fsync plus atomic rename does not by itself establish durable directory-entry ordering after sudden power loss; directory fsync/crash tests are absent.
+4. Concurrent writes using the same object ID are not serialized; concurrency control is listed as not provided.
+5. Backend `get()` materializes whole blobs before length checks; hostile-backend memory exhaustion remains an acknowledged limitation.
+6. A narrow race remains in retrieve's no-overwrite check when another process creates the destination between the final existence check and `os.replace()`.
+
+The V1-2 archive remains a meaningful local encrypted-archive prototype. It must not be described as a production-ready service or as already enforcing AGP.
