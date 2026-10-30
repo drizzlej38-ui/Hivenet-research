@@ -138,3 +138,52 @@ The master project summary explicitly labels the stress-test sequence as planned
 | `HIVENODE_SOVEREIGN_MESH.md` | `89af8a94d7dad3acf4621a6090397d40ea971fe0` |
 
 **Bottom line:** The project has source artifacts for an early working-style distributed-compute demonstrator and substantial target-architecture specifications. The next research task is to connect current executable code, tests, and exact revisions to those specifications—without confusing a documented intention with a verified capability.
+
+
+## 8. Additional SkyNet repository evidence
+
+A second source repository was inspected: `drizzlej38-ui/SkyNet`, branch `main`, tree SHA `a1e454edbb81e14b0f95980cae2382249c42fbb7`. This repository contains the ENDCAP, AGP Federation, node-class, Dragon Radar, and Agent Card specifications, plus a deliberately incomplete ENDCAP/AGP prototype.
+
+### Updated component inventory
+
+| Component | Additional source evidence | Updated defensible classification | Remaining gap |
+|---|---|---|---|
+| ENDCAP node identity/federation model | `ENDCAP.md`, `endcap_prototype.py` | Specification plus deliberately incomplete in-memory prototype | Durable storage, cryptographic identity/signatures, secure transport, actual federation, crash consistency |
+| AGP Federation | `AGP_FEDERATION.md`, AGPToken class in prototype | Detailed permission-object specification plus unsigned in-memory token prototype | Cryptographic signing/verification, robust grantee binding, delegation, distributed revocation, interoperability |
+| Node classes | `NODE_CLASSES.md` | Versioned taxonomy specification | Machine-readable registry and enforcement in runtime; Agent Card schema synchronization |
+| Agent Card/discovery | `AGENT_CARD_SCHEMA.md` | Proposed schema | Validation against current A2A requirements and actual endpoint implementation |
+| Dragon Radar | `DRAGON_RADAR.md` | Detailed detection/response specification | Runtime implementation, telemetry pipeline, calibration, false-positive and adversarial tests, owner consent enforcement |
+
+### Static review findings in ENDCAP/AGP prototype
+
+The prototype explicitly lists cryptographic signing, network transport/discovery, persistent storage, Dragon Radar, Confluence handshake, and token delegation chains as not implemented.
+
+Additional authorization limitations visible in the code:
+- Read methods check token node ID and permission, but do not bind the presented token to the caller's `requestor_id` / `grantee_id`.
+- The token is a mutable in-memory object without a cryptographic signature or issuer-key verification.
+- `NodeSet` stores one token per node ID, so registering multiple grants for different grantees on the same node overwrites the earlier token entry.
+- The prototype's write method is owner-only; AGP's grantee `write` permission is not implemented as an actual grantee write path.
+- The record store is an in-memory Python list; no durable or encrypted persistence is demonstrated.
+
+These are prototype-level defects/omissions, not claims about a separate later ENDCAP archive implementation.
+
+### Dragon Radar claims and limits
+
+The specification defines event types, severity levels, score weights, decay, TX quarantine, and canary events. These are design parameters, not measured detection quality. The repository tree inspected here did not include a Dragon Radar implementation file. Canary callbacks can disclose access metadata and may be triggered by automated scanners or previews; they are indicators, not conclusive attribution. Automatic temporary suspension should be framed as a narrow, owner-preauthorized safety action with notice, review, expiry, and restoration rules.
+
+### Agent Card schema synchronization
+
+The Agent Card schema describes `node_class` as a string, while `NODE_CLASSES.md` explicitly requires an array for composable classes and says the Agent Card schema must be updated. This is a concrete version-alignment issue.
+
+### Exact SkyNet source revisions inspected
+
+| File | Blob SHA |
+|---|---|
+| `AGENT_CARD_SCHEMA.md` | `b29830a21074f3e4f7e4558a01bad29e2d357ac9` |
+| `AGP_FEDERATION.md` | `152415b9e98005d0f7c1bf98eb6882291bf4f2e1` |
+| `DRAGON_RADAR.md` | `80e8edda8e61fba0855e594f85a3c60e24d77629` |
+| `ENDCAP.md` | `390fea98c4cd831bafdd701c90d14c87699b6302` |
+| `NODE_CLASSES.md` | `1ca8f3720658c3b13ab39e402cabc83546a32b2c` |
+| `endcap_prototype.py` | `9361dc3868648e4b4bbe52ebbd568ad700806887` |
+
+No runtime test of this prototype was performed in this review. All findings above are based on static source inspection.
