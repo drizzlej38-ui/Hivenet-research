@@ -37,6 +37,7 @@ Test plans are not test results. Hashes establish byte identity, not safety or a
 ### Phase 2 — Evidence and architecture reconciliation
 - [Architecture reconciliation](reviews/PHASE_2_ARCHITECTURE_RECONCILIATION.md)
 - [Implementation evidence matrix](reviews/IMPLEMENTATION_EVIDENCE_MATRIX.md)
+- [Founder decision register](reviews/FOUNDER_DECISION_REGISTER.md)
 
 Phase 2 compares the documented target architecture with source artifacts in both [hivenet-docs](https://github.com/drizzlej38-ui/hivenet-docs) and [SkyNet](https://github.com/drizzlej38-ui/SkyNet). It distinguishes the LAN coordinator/worker demonstrator from the longer-term sovereign mesh design and inspects the separate ENDCAP/AGP concept prototype. Findings are preliminary, based on static source inspection, and remain subject to founder review.
 
