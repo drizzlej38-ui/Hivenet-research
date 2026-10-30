@@ -290,3 +290,66 @@ The following exact files were read from `drizzlej38-ui/hivenet-docs` on `main`:
 | `server.py` | `ba764e9e49dde1ef9a6bcda66ed2a1c67bd2ccb8` |
 
 This list is the inspected subset, not the entire source repository.
+
+
+## 15. Additional source repository: SkyNet
+
+A second project repository, `drizzlej38-ui/SkyNet`, was also inspected after it appeared in the connected GitHub repository list. Its `main` tree SHA at inspection was `a1e454edbb81e14b0f95980cae2382249c42fbb7`. It contains more developed subsystem specifications and an ENDCAP/AGP federation concept prototype. This materially extends the earlier review; the first source repository is not the only relevant source of truth.
+
+### New evidence located
+
+- `ENDCAP.md`: a versioned self-describing node specification with standalone operation, completeness, owner identity, and set membership.
+- `AGP_FEDERATION.md`: a structured AGP token schema with issuer, subject, grantee, permissions, expiry, and revocation fields; a logical set and informational federation map; and a delegation model.
+- `NODE_CLASSES.md`: the previously missing node-class specification, with eight classes and composability rules.
+- `DRAGON_RADAR.md`: a detailed monitoring, alert, TX-state, canary, and anomaly-scoring design.
+- `AGENT_CARD_SCHEMA.md`: a combined discovery/identity schema intended to connect A2A-style agent discovery with ENDCAP and AGP.
+- `endcap_prototype.py`: a deliberately incomplete Python prototype demonstrating ENDCAP manifests, AGP permission objects, node sets, and owner-mediated membership.
+
+### Updated node taxonomy finding
+
+The earlier finding that `NODE_CLASSES.md` was missing applies only to `hivenet-docs`. It is present in the SkyNet repository. However, the two SkyNet documents are not yet synchronized: `AGENT_CARD_SCHEMA.md` declares `node_class` as a string in its field description/example, while `NODE_CLASSES.md` says it is an array to support composability. The schema should be version-aligned before implementers rely on it.
+
+The eight classes in `NODE_CLASSES.md` are inference, coordinator, triage, archive, gateway, sentinel, registry, and ghost. These should be treated as a current proposed canonical node-class list, subject to founder confirmation. Service sub-roles such as sanitizer, detonation, render_proxy, and consensus are distinct from the node-class list.
+
+### AGP specification is more developed, but not yet a verified protocol
+
+`AGP_FEDERATION.md` defines a richer token object than the earlier compact string alone. It identifies issuer, token ID, subject node and set, grantee, permission flags, issue/expiry times, revocation state, and scope notes. It also states that delegation cannot exceed the delegator's permission scope.
+
+However, the inspected `endcap_prototype.py` explicitly says cryptographic signing, transport/discovery, persistent storage, Dragon Radar, Confluence handshake, and delegation chains are not implemented. The Python `AGPToken` is therefore a mutable in-memory permission object, not a cryptographically authenticated AGP credential.
+
+Static code review also found that `ENDCAPNode.read_all()` and `read_metadata()` check that a supplied token targets the node and has the relevant permission, but do not compare the requestor identity with `token.grantee_id` or validate an issuer signature. A token object with the right node ID and permission could therefore be presented by a different requestor within this prototype. This is a prototype authorization defect, not a finding about a later implementation.
+
+The prototype's `NodeSet` stores members in a dictionary keyed only by `node_id`; registering multiple grants for the same node overwrites the previous token entry. The demo registers family and researcher tokens for the same node, so the set abstraction does not preserve multiple grantee grants for that node. This should be fixed before using the prototype as evidence of multi-grantee authorization.
+
+The `write()` method in the prototype is owner-only; the AGP `write` permission exists in the data model but is not implemented as a grantee write path. The prototype is in-memory only and does not demonstrate durable storage, encrypted archive payloads, network federation, or crash-safe atomic commits.
+
+### Dragon Radar: clarify pre-authorized automation and canary limits
+
+`DRAGON_RADAR.md` explicitly states that Dragon Radar watches but does not act unilaterally, while also specifying automatic temporary AGP suspension for TX-flagged nodes. These can coexist if suspension is defined as a narrow, pre-authorized, temporary protective action, with clear owner notification, expiry/review, appeal, and restoration semantics. The document should not simultaneously imply that all response requires contemporaneous human action and that automatic suspension is unconditional.
+
+The anomaly score thresholds and weights are specified as constants, but no calibration data, false-positive rate, adversarial evaluation, or implementation is present in the inspected source set. Treat them as proposed policy parameters, not validated detection performance.
+
+Canary URLs and remote callbacks can themselves disclose access metadata (such as network address, time, and correlation identifiers), fail when network access is blocked, or be triggered by automated preview/scanning systems. They should be opt-in, threat-modelled, and described as indicators rather than conclusive proof that a particular person intentionally accessed or leaked a document. “Identifies exactly which authorized recipient” is too strong without recipient-unique marking, careful forwarding/collusion analysis, and false-trigger controls.
+
+### ENDCAP completeness invariant needs operational semantics
+
+The ENDCAP specification and prototype assert that each node is standalone and complete, and that records are not split across nodes. In the prototype, `complete=True` is a constructor invariant; it does not by itself prove crash consistency or make partial writes impossible. Atomicity, commit markers, durable flush behavior, recovery after power loss, and storage integrity must be established by the actual storage implementation and tests.
+
+The SkyNet ENDCAP identity-node prototype is also distinct from the encrypted archive implementation described in project history. Do not conflate a self-describing manifest and in-memory record container with the separate encrypted ENDCAP archive package.
+
+### Updated publication conclusion
+
+The SkyNet repository contains more than prose: it includes a deliberately incomplete ENDCAP/AGP concept prototype. This supports the classification **prototype source exists**, while its own header and static inspection clearly identify major unimplemented security and persistence features. It does not establish production-ready ENDCAP, signed AGP, network federation, or Dragon Radar enforcement.
+
+### Additional SkyNet source revisions inspected
+
+| Artifact | Blob SHA |
+|---|---|
+| `AGENT_CARD_SCHEMA.md` | `b29830a21074f3e4f7e4558a01bad29e2d357ac9` |
+| `AGP_FEDERATION.md` | `152415b9e98005d0f7c1bf98eb6882291bf4f2e1` |
+| `DRAGON_RADAR.md` | `[SHA not yet recorded in this audit extract]` |
+| `ENDCAP.md` | `[SHA not yet recorded in this audit extract]` |
+| `NODE_CLASSES.md` | `[SHA not yet recorded in this audit extract]` |
+| `endcap_prototype.py` | `9361dc3868648e4b4bbe52ebbd568ad700806887` |
+
+The missing SHA values above are intentionally left blank rather than guessed; they should be filled after retrieval of those exact file metadata records.
