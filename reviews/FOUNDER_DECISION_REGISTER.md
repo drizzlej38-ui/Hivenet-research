@@ -107,11 +107,11 @@
 
 **Question:** Which implementation should the research repository treat as the current ENDCAP implementation?
 
-**Finding:** The SkyNet repository contains `endcap_prototype.py`, a deliberately incomplete in-memory ENDCAP/AGP identity prototype. It is distinct from the encrypted archive package described in project history.
+**Finding:** The encrypted archive package was located in saved V1-1 and V1-2 ZIP snapshots. It is distinct from the SkyNet `endcap_prototype.py` identity/federation prototype. V1-2 includes a separate owner-key recovery-kit feature.
 
-**Recommendation:** Locate and pin the current encrypted archive package and its tests before making implementation claims about encryption, manifest-last commits, crash recovery, streaming, or large-file support.
+**Recommendation:** Preserve both ZIPs by SHA-256, treat V1-2 as the current reviewed snapshot, and do not conflate encryption-key recovery with AGP authorization bypass. Address the symlink path issue, status semantics, durability, concurrency, and bounded reads before broader deployment.
 
-**Status:** Evidence retrieval required.
+**Status:** Source located; initial audit and test execution complete. Termux validation and any code changes remain pending.
 
 ## Decision 12 — Public research scope
 
