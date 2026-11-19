@@ -47,8 +47,12 @@ Phase 2 compares the documented target architecture with source artifacts in bot
 - [Neurogenesis and Adaptive Neural Mesh](research/neuroscience/01_NEUROGENESIS_AND_ADAPTIVE_NEURAL_MESH.md)
 - [Cognitive Contagion and Interbrain Dynamics](research/neuroscience/02_COGNITIVE_CONTAGION_AND_INTERBRAIN_DYNAMICS.md)
 - [Neural Architecture Synthesis and Translation](research/neuroscience/03_NEURAL_ARCHITECTURE_SYNTHESIS_AND_TRANSLATION.md)
+- [Mesh Neural Networking: Concept and Architecture](research/neuroscience/04_MESH_NEURAL_NETWORKING_MNN_CONCEPT.md)
+- [MNN Local Routing and Domain Admission](research/neuroscience/05_MNN_LOCAL_ROUTING_AND_DOMAIN_ADMISSION.md)
+- [MNN Research and Evaluation Plan](research/neuroscience/06_MNN_RESEARCH_AND_EVALUATION_PLAN.md)
+- [MNN Prior Art and Research Positioning](research/neuroscience/07_MNN_PRIOR_ART_AND_RESEARCH_POSITIONING.md)
 
-Phase 3 preserves the founder's earlier artificial-neurogenesis / ANDNM concept and adds literature-grounded research notes on cognitive contagion, adult human neurogenesis, dendritic computation, proposed neurosynthesis, and a digital-first reverse-neuroengineering strategy. These are research concepts and hypotheses, not claims of biological implementation. The five-channel MNR-5 design is a proposed computational experiment.
+Phase 3 preserves the founder's earlier artificial-neurogenesis / ANDNM concept and adds literature-grounded research notes on cognitive contagion, adult human neurogenesis, dendritic computation, proposed neurosynthesis, and a digital-first reverse-neuroengineering strategy. The MNN proposal investigates specialization-scoped signal forwarding by computational neurons, local peer awareness with extended routing, and domain-local admission of new neurons. These are research concepts and hypotheses, not claims of biological implementation or demonstrated novelty. The five-channel MNR-5 design is a proposed computational experiment.
 
 ## Architectural position under review
 
@@ -92,6 +96,7 @@ Authorship, affiliation, licensing, contribution statements, and any AI-assistan
 10. Cognitive contagion, interbrain dynamics, and social learning.
 11. Neurogenesis, neural plasticity, and adaptive computational neural meshes.
 12. Digital neural architecture synthesis and potential biological translation.
+13. Mesh Neural Networking: specialization-aware forwarding, local awareness, extended routing, and incremental domain-local admission.
 
 ## Working rule
 
