@@ -54,6 +54,12 @@ Phase 2 compares the documented target architecture with source artifacts in bot
 
 Phase 3 preserves the founder's earlier artificial-neurogenesis / ANDNM concept and adds literature-grounded research notes on cognitive contagion, adult human neurogenesis, dendritic computation, proposed neurosynthesis, and a digital-first reverse-neuroengineering strategy. The MNN proposal investigates specialization-scoped signal forwarding by computational neurons, local peer awareness with extended routing, and domain-local admission of new neurons. These are research concepts and hypotheses, not claims of biological implementation or demonstrated novelty. The five-channel MNR-5 design is a proposed computational experiment.
 
+
+### Phase 4 — Cooperative intelligence across substrates (independent research direction)
+- [CIABSDCS — Cooperative Intelligence Across Biological, Synthetic, and Distributed Computational Systems: Preliminary Foundational Research Proposal](research/ciabsdcs/CIABSDCS_FOUNDATIONAL_RESEARCH_PROPOSAL.md)
+
+CIABSDCS is an independent interdisciplinary research framework, not a HiveNet subsystem. It investigates whether biological, synthetic, and distributed computational systems can cooperate through interfaces and governance that respect their different properties and limitations. HiveNet may later serve as one possible implementation environment; it does not define or own the research direction. The initial proposal is conceptual and hypothesis-generating. It makes no claim of demonstrated collective superiority, biological implementation, or peer-reviewed validation.
+
 ## Current research additions — 2026-11-20
 
 ### Model capability extraction and artifact integrity
