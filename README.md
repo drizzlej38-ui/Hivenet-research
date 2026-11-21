@@ -54,6 +54,15 @@ Phase 2 compares the documented target architecture with source artifacts in bot
 
 Phase 3 preserves the founder's earlier artificial-neurogenesis / ANDNM concept and adds literature-grounded research notes on cognitive contagion, adult human neurogenesis, dendritic computation, proposed neurosynthesis, and a digital-first reverse-neuroengineering strategy. The MNN proposal investigates specialization-scoped signal forwarding by computational neurons, local peer awareness with extended routing, and domain-local admission of new neurons. These are research concepts and hypotheses, not claims of biological implementation or demonstrated novelty. The five-channel MNR-5 design is a proposed computational experiment.
 
+## Current research additions — 2026-11-20
+
+### Model capability extraction and artifact integrity
+- [HIVENET-RS-ADR-001 — Adversarial Distillation and Sovereign Multi-Model Security](papers/HIVENET-RS-ADR-001_ADVERSARIAL_DISTILLATION_AND_SOVEREIGN_SECURITY.md)
+- [HIVENET-RS-WSP-001 — Weight-Space Programming, Model Integrity, and Neural Network Security](research/weight-space-security/HIVENET-RS-WSP-001_WEIGHT_SPACE_SECURITY.md)
+- [HIVENET-RS-ASTRA-001 — GPT-6 Astra Capability Assessment and Multi-Model Integration Potential](papers/HIVENET-RS-ASTRA-001_ASTRA_CAPABILITY_ASSESSMENT.md)
+
+OpenAI's November 20, 2026 article concerns adversarial distillation through outputs and protected reasoning. The two November 2026 weight-space preprints concern direct inspection/modification of parameter artifacts. These are related security domains but must remain technically distinct.
+
 ## Architectural position under review
 
 Working formulation, pending founder review:
