@@ -125,6 +125,18 @@
 
 ---
 
+## Decision 13 — Cooperative interoperability
+
+**Question:** Should HiveNet define itself as a self-contained ecosystem, an isolated system, or an active participant in the wider technical ecosystem?
+
+**Decision:** Adopt the principle **“An ecosystem within itself, yet still a participant.”** Adopt the motto **“Autonomous by nature. Cooperative by design. Interoperable by choice.”**
+
+**Rationale:** HiveNet should maintain internal coherence and the ability to operate its own nodes, services, protocols, and governance, while cooperating with external systems through explicit, bounded, replaceable interfaces. Refusing all external technology would create unnecessary duplication and isolation; depending on one external platform would create avoidable concentration and control risks.
+
+**Requirements:** Interoperability does not imply membership, trust, authorization, or transfer of authority. External access remains scoped and owner-authorized. Integrations should be replaceable where practical, disclose only necessary information, document dependencies, and preserve unrelated local functions when an external service is unavailable.
+
+**Status:** Adopted by founder on 2026-11-26. Detailed subsystem specifications and conformance evidence remain pending.
+
 ## How to use this register
 
 - “Recommendation” is not a decision.
