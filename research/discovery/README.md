@@ -17,6 +17,8 @@ This is a research question, not an assumption that intelligence or superintelli
 - [01 — Seeded Discovery Engine](01_SEEDED_DISCOVERY_ENGINE.md)
 - [02 — Open-Ended Ecosystem Simulation Protocol](02_OPEN_ENDED_ECOSYSTEM_SIMULATION.md)
 - [03 — Evaluation Plan](03_DISCOVERY_ECOSYSTEM_EVALUATION_PLAN.md)
+- [04 — Architecture Reconciliation](04_ARCHITECTURE_RECONCILIATION.md)
+- [05 — Endogenous Evolutionary Dynamics](05_ENDOGENOUS_EVOLUTIONARY_DYNAMICS.md)
 
 ## Working definitions
 
