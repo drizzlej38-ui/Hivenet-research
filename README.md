@@ -69,6 +69,12 @@ CIABSDCS is an independent interdisciplinary research framework, not a HiveNet s
 
 OpenAI's November 20, 2026 article concerns adversarial distillation through outputs and protected reasoning. The two November 2026 weight-space preprints concern direct inspection/modification of parameter artifacts. These are related security domains but must remain technically distinct.
 
+## Adopted architectural principle — 2026-11-26
+
+- [Cooperative Interoperability Principle](governance/COOPERATIVE_INTEROPERABILITY_PRINCIPLE.md)
+
+**“An ecosystem within itself, yet still a participant.”** HiveNet is intended to be internally coherent and independently useful while participating in the wider technical ecosystem through explicit, bounded, replaceable integrations. The adopted motto is **“Autonomous by nature. Cooperative by design. Interoperable by choice.”** This is a design direction; conformance and implementation evidence remain outstanding.
+
 ## Architectural position under review
 
 Working formulation, pending founder review:
