@@ -19,6 +19,7 @@ This is a research question, not an assumption that intelligence or superintelli
 - [03 — Evaluation Plan](03_DISCOVERY_ECOSYSTEM_EVALUATION_PLAN.md)
 - [04 — Architecture Reconciliation](04_ARCHITECTURE_RECONCILIATION.md)
 - [05 — Endogenous Evolutionary Dynamics](05_ENDOGENOUS_EVOLUTIONARY_DYNAMICS.md)
+- [06 — Prior Art and Research-Gap Matrix](06_PRIOR_ART_AND_RESEARCH_GAP_MATRIX.md)
 
 ## Working definitions
 
