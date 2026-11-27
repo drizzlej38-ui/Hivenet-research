@@ -60,6 +60,12 @@ Phase 3 preserves the founder's earlier artificial-neurogenesis / ANDNM concept 
 
 CIABSDCS is an independent interdisciplinary research framework, not a HiveNet subsystem. It investigates whether biological, synthetic, and distributed computational systems can cooperate through interfaces and governance that respect their different properties and limitations. HiveNet may later serve as one possible implementation environment; it does not define or own the research direction. The initial proposal is conceptual and hypothesis-generating. It makes no claim of demonstrated collective superiority, biological implementation, or peer-reviewed validation.
 
+### Phase 5 — Applied materials-science research
+- [SECTAR research index](research/sectar/README.md)
+- [SECTAR-RS-001 — Computational Investigation of Charge-Carrier Dynamics and Collection in Bi₂S₃](research/sectar/SECTAR-RS-001_BI2S3_COMPUTATIONAL_RESEARCH_PROPOSAL.md)
+
+SECTAR is a distinct applied materials-science research programme investigating solar-energy materials and charge collection. Its initial Bi₂S₃ proposal is a computational, literature-grounded study of carrier trapping, recombination, transport, and collection. It is not a HiveNet subsystem. HiveNet Compute Mesh may later provide execution and provenance infrastructure, but scientific validation remains independent of the compute platform. The proposal is not evidence that experiments have been run or hypotheses confirmed.
+
 ## Current research additions — 2026-11-20
 
 ### Model capability extraction and artifact integrity
