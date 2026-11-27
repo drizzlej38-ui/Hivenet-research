@@ -94,6 +94,16 @@ System-health signals should be inspectable, proportionate, and governed. Automa
 
 Node roles and subsystems should be separable and replaceable where practical. A system should not require every node to run every service or use one model, vendor, or execution environment.
 
+### 4.7 Cooperative interoperability
+
+HiveNet is intended to be **an ecosystem within itself, yet still a participant** in the wider technical and research ecosystem. It should be internally coherent and capable of sustaining its own nodes, services, protocols, and governance while remaining able to cooperate through explicit, bounded interfaces with external systems.
+
+The adopted motto is: **Autonomous by nature. Cooperative by design. Interoperable by choice.**
+
+Interoperability is not membership, trust, authorization, or subordination. External services may exchange explicitly authorized requests, data, and results without becoming HiveNet nodes. Conversely, HiveNet participation does not grant an external service access to node-local resources or governance authority. Integrations should be replaceable where practical, disclose only what is necessary, and fail without disabling unrelated internal functions. These are target requirements to specify and test, not claims of current conformance.
+
+This principle complements local-first operation, explicit participation, bounded coordination, owner-governed data, and composability. It rejects both compulsory dependence on external platforms and unnecessary isolation from mature tools and shared standards.
+
 ## 5. Architectural model
 
 HiveNet is conceived as a network of independently controlled nodes. A node may host one or more logical roles, including inference, coordination, triage, archive, gateway, sentinel, or registry functions. These labels describe roles, not mandatory physical device classes.
