@@ -60,6 +60,17 @@ Phase 3 preserves the founder's earlier artificial-neurogenesis / ANDNM concept 
 
 CIABSDCS is an independent interdisciplinary research framework, not a HiveNet subsystem. It investigates whether biological, synthetic, and distributed computational systems can cooperate through interfaces and governance that respect their different properties and limitations. HiveNet may later serve as one possible implementation environment; it does not define or own the research direction. The initial proposal is conceptual and hypothesis-generating. It makes no claim of demonstrated collective superiority, biological implementation, or peer-reviewed validation.
 
+### Phase 5 — General-purpose, model-independent discovery engine (preliminary)
+
+- [General-Purpose Discovery Engine research charter](research/seeded-discovery-engine/README.md)
+- [Concept and requirements](research/seeded-discovery-engine/01_CONCEPT_AND_REQUIREMENTS.md)
+- [Reference architecture proposal](research/seeded-discovery-engine/02_REFERENCE_ARCHITECTURE.md)
+- [Research and development plan](research/seeded-discovery-engine/03_RESEARCH_AND_DEVELOPMENT_PLAN.md)
+- [Prior-art and gap analysis](research/seeded-discovery-engine/04_PRIOR_ART_AND_GAP_ANALYSIS.md)
+- [Evaluation protocol](research/seeded-discovery-engine/05_EVALUATION_PROTOCOL.md)
+
+This independent research track investigates a reusable discovery capability that external models, agents, tools, and human researchers can invoke. The proposed engine is not a foundation model and is not defined by a fixed agent swarm. It is intended to manage investigation continuity, evidence, provenance, bounded planning, evaluation, and knowledge updates across domains. Scientific research and software/digital engineering are initial proving grounds; broader applications include data science, systems analysis, historical inquiry, and general problem solving. Prior-art findings are preliminary and explicitly do not establish novelty. The engine may later integrate with HiveNet, but it must remain usable independently. This work does not replace or delay the separate HiveNet Mesh Lab Task 002.
+
 ## Current research additions — 2026-11-20
 
 ### Model capability extraction and artifact integrity
